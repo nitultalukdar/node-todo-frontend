@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "dipankar435/docker-repo"
+    registry = "nitul/friendlyhello"
     registryCredential = 'dockerhub'
     dockerImage = ''
     containerId = sh(script: 'docker ps -aqf "name=node-app"', returnStdout: true)
@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/dipankar2019/node-todo-frontend'
+        git 'https://github.com/nitultalukdar/node-todo-frontend.git'
       }
     }
     stage('Build') {
